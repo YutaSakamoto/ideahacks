@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-3">
+
+    <h2><%= @topic.title%></h2>
+    <p><%= simple_format @topic.description %></p>
+
+    <% @topic.category_topic.each do |category_topic| %>
+    <h5>カテゴリー</h5>
+    <%= category_topic.category.name %>
+    <%end%>
+    
+    <p><%= simple_format @topic.user.fullname %></p>
+    <h3>Comments</h3>
+    <% if @topic.reviews.any? %>
+      <ul>
+      <% @topic.reviews.each do |review| %>
+      <li>
+        <%= review.comment %>
+      </li>
+      <%end%>
+      </ul>
+      <%end%><br/>
+
+    <div class="row">
+    <div class="col-md-12">
+        <span id="average_rating"></span>
+      </div>
+    </div>
+
+    <div class="col-md-8 col-md-offset-3">
+      <%= render partial: "reviews/form" %>
+    <div>
+  </div>
+</div>
+
+<script>
+  $('#average_rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= @topic.average_rating %>
+  });
+</script>

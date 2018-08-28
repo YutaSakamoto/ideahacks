@@ -1,0 +1,38 @@
+<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Logo", root_path, class: "navbar-brand" %>
+    </div>
+
+      <ul class="nav navbar-nav navbar-right">
+          <% if (!user_signed_in?) %>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <%else%>
+            <div class="navbar-header-right">
+              <%= current_user.fullname %>
+            </div>
+              <li><%= link_to "コミュニティー", "#" %></li>
+                <li><%= link_to "ビジネス", categories_business_path %></li>
+                <li><%= link_to "生活", categories_life_path %></li>
+                <li><%= link_to "企画職向け", categories_planning_path %></li>
+                <li><%= link_to "テクノロジー", categories_technology_path %></li>
+                <li><%= link_to "アート", categories_art_path %></li>
+                <li><%= link_to "イベント", categories_event_path %></li>
+                <li><%= link_to "遊び", categories_hobby_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            </ul>
+            <%end%>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+</nav>
