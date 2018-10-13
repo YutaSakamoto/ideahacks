@@ -1,3 +1,350 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr";
+
+
+body {
+  color: #565a5c;
+  background-color: #F8F8F8;
+  font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+a {
+  color: #00A699;
+}
+
+.container {
+  width: 85%;
+}
+
+.text-babu, .icon-babu {
+  color: #ff7f50;
+}
+
+.text-red, .icon-red {
+  color: #ff7f50;
+}
+
+// NAVBARS
+.navbar-default {
+  background-color: #FFFFFF;
+}
+
+.navbar-default .navbar-brand {
+  color: #FF5A5F;
+  font-size: 2em;
+  font-weight: 200;
+}
+
+.box-size {
+  height: 4rem;
+}
+
+// BUTTONS
+.btn-block {
+  display: block;
+  white-space: normal;
+  width: 100%;
+}
+
+.btn {
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 9px 27px;
+}
+
+.btn-small {
+  padding: 5px 15px;
+  margin-top: 15px;
+}
+
+.btn:hover, .btn:focus {
+  color: #fff;
+}
+
+.btn.btn-default {
+  width: 100%;
+  border-color: #c4c4c4;
+  background: white;
+  color: #484848;
+  border-radius: 2px;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.btn.btn-normal {
+  border: 1px solid #ff7f50;
+  background-color: #ff7f50;
+}
+
+.btn.btn-normal:active {
+  outline: none;
+  border-color: #ff7f50;
+  background-color: #e00007;
+}
+
+.btn.btn-form {
+  border: 1px solid #00A699;
+  background-color: #00A699;
+}
+
+.btn.btn-form:active {
+  outline: none;
+  border-color: #066165;
+  background-color: #066165;
+}
+
+.btn.btn-facebook {
+  border: 1px solid #3B5998;
+  background-color: #3B5998;
+}
+
+.btn.btn-facebook:active {
+  outline: none;
+  border-color: #2d467b;
+  background-color: #2d467b;
+}
+
+
+// AVATAR
+.avatar-small {
+  width: 28px;
+}
+
+.avatar-medium {
+  width: 48px;
+}
+
+.avatar-large {
+  width: 68px;
+}
+
+.avatar-full {
+  width: 100%;
+}
+
+// FORMS
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-control {
+  border-radius: 2px;
+  height: 4rem;
+}
+
+.form-control textarea {
+  height: 400px;
+}
+
+.form-group input {
+  height: 45px;
+  border: 1px solid #ff7f50;
+}
+
+.form-group textarea {
+  height: 400px;
+  border: 1px solid #ff7f50;
+}
+
+.form-group input[type="radio"] {
+  height: 15px;
+  margin-right: 10px;
+}
+
+.btn-group label {
+  margin-right: 15px;
+}
+
+.form-group select {
+  width: 100%;
+  color: #ff7f50;
+  background-color: white;
+  border: 1px solid #00A699;
+  border-radius: 2px;
+  padding: 10px;
+  appearance: none;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari & Chrome */
+}
+
+.select:before {
+  content: '\25bc';
+  font-size: 1.2em;
+  position: absolute;
+  color: #ff7f50;
+  top: 35px;
+  right: 30px;
+  transform: scale(0.94, 0.62);
+}
+
+// PANEL
+// PANELS
+.panel-default .panel-heading {
+  color: #323232;
+  background-color: #f8f8ff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.description {
+  color: #575757;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+}
+
+span {
+  padding-left: 15px;
+}
+
+
+// PHOTO UPLOAD
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+
+
+
+
+.form-control.datepicker {
+  color: #00A699;
+  background-color: white;
+  border: 1px solid #00A699;
+  text-align: center;
+}
+
+.message-alert {
+  color: #d43242;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+// SEARCH
+#main {
+  height: 100%;
+  overflow: hidden;
+}
+
+#left {
+  padding: 10px 400px 10px 20px;
+  overflow: scroll;
+  height: 100%;
+}
+
+#right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+}
+
+#add-card form {
+  width: 480px;
+  margin: 20px auto;
+}
+
+#add-card label {
+  position: relative;
+  color: #6A7C94;
+  font-weight: 400;
+  height: 48px;
+  line-height: 48px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+#add-card label > span {
+  float: left;
+}
+
+.field {
+  background: white;
+  box-sizing: border-box;
+  font-weight: 400;
+  border: 1px solid #CFD7DF;
+  border-radius: 24px;
+  color: #32315E;
+  outline: none;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 20px;
+  cursor: text;
+  width: 76%;
+  float: right;
+}
+
+.field::-webkit-input-placeholder { color: #CFD7DF; }
+.field::-moz-placeholder { color: #CFD7DF; }
+.field:-ms-input-placeholder { color: #CFD7DF; }
+
+.field:focus,
+.field.StripeElement--focus {
+  border-color: #F99A52;
+}
+
+#add-card button {
+  float: left;
+  display: block;
+  background-image: linear-gradient(-180deg, #F8B563 0%, #F99A52 100%);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.10), inset 0 -1px 0 0 #E57C45;
+  color: white;
+  border-radius: 24px;
+  border: 0;
+  margin-top: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  outline: none;
+}
+
+#add-card button:focus {
+  background: #EF8C41;
+}
+
+#add-card button:active {
+  background: #E17422;
+}
+
+.outcome {
+  float: left;
+  width: 100%;
+  padding-top: 8px;
+  min-height: 20px;
+  text-align: center;
+}
+
+.success, .error {
+  display: none;
+  font-size: 13px;
+}
+
+.success.visible, .error.visible {
+  display: inline;
+}
+
+.error {
+  color: #E4584C;
+}

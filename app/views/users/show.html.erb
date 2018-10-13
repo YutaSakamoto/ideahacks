@@ -1,20 +1,37 @@
+<br/>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <div class="center">
-     <ul>
-      <li>Email Address<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
-      <li>Facebook<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
-    </ul>
+      <%= image_tag avatar_url(@user), class: "avatar-full" %>
+      <% if current_user && current_user != @user %>
+       <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post, class: "btn btn-default" %>
+      <% end %>
+    </div>
 
-      <h2><%= @user.fullname %></h2>
 
-      <div class="description row-space-3">
-     <%= @user.description %>
+      <h3><%= @user.fullname %></h3><br/>
+      <%= render 'follow_form' %>
+      <%= render 'status'%><br/>
+      <%= link_to 'お気に入り', favorites_index_path %><br/><br/>
+
+
+      <div class="description row-space-9">
+        <h4>ユーザー紹介：</h4>
+        <%= simple_format @user.description %><br/>
       </div>
+    </div>
 
-      <%= @topics.each do %>
+       <div class="col-md-8">
+        <% @user.topics.each do |topic| %>
+         <div class="panel panel-default">
+           <div class="panel-heading"><%= topic.title %></div>
+           <div class="panel-body">
+             <%= simple_format topic.description %>
+             <%= topic.created_at %>
+           </div>
+         </div>
+        <% end %>
+    </div>
 
-      <%end%>
-      
+
   </div>
-</div>

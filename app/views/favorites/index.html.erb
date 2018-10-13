@@ -1,0 +1,14 @@
+<br/>
+  <div class="row">
+    <h2 class="text-center">お気に入り一覧</h2><br/>
+    <% @favorite_topics.each do |topic| %>
+     <div class="panel panel-default">
+       <div class="panel-heading"><%= topic.title %></div><br/>
+            <div class="panel-body">
+            <h4><%= topic.description %></h4></div><br/>
+            <span><%= topic.user.fullname %></span>
+
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="row">
+    <br/>
+    <div class="collapse" id="collapsePanel">
+
+        <%= search_form_for @search, url: search_path, remote: true do |f| %>
+
+            <div class="row">
+              <div class="col-md-8">
+                <label>キーワード</label>
+                <div id="slider-range"></div>
+              </div>
+              <div class="col-md-2">
+                <label>キーワード</label>
+                <%= f.text_field :topic_count, class: "form-control" %>
+              </div>
+            </div>
+            <hr/>
+
+
+            <div class="row text-center">
+              <%= f.submit "Search", class: "btn btn-form" %>
+            </div>
+        <% end %>
+    </div>

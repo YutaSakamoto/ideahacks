@@ -31,12 +31,16 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
-gem 'bootstrap-sass'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '~> 5.0'
 gem 'ransack'
 gem 'toastr-rails', '~> 1.0'
 gem "carrierwave"
 gem 'acts-as-taggable-on'
+gem 'font-awesome-rails'
+gem 'stripe'

@@ -1,11 +1,14 @@
-<%= form_for root_path, method: :get do %>
+<br/>
   <div class="row">
-    <div class="col-md-6">
-      <%= text_field_tag :search, params[:search], placeholder:"記事を検索する", class: "form-control" %>
+    <%= search_form_for @q do |f|%>
+    <div class="col-md-12">
+      <%= f.search_field :title_cont, placeholder:"記事を検索する", class: "form-control" %>
     </div>
+    <!--
     <div class="col-md-6">
-      <%= text_field_tag :date, params[:date], placeholder:"日付で記事を検索する", class: "form-control datepicker" %>
+      <%= text_field :date, placeholder:"日付で記事を検索する", class: "form-control datepicker" %>
     </div>
+    !-->
   </div>
   <br/></br>
 
@@ -16,22 +19,56 @@
   </div>
 <%end%>
 
-<br/><br/><br/>
 
-<div class="col-md-6">
-<% @topics.each do |topic| %>
-<ul>
-<li><%= topic.title%></li><br/>
-<li><%= simple_format topic.description %></li><br/>
-<li><%= topic.user.fullname %></li><br/>
-</ul>
+<br/>
+   <h1 class="text-center">アイデアハック<small>　〜つなげるために〜</small></h1><br/>
 
+   <div class="row">
+     <h2 class="text-center">アイデア一覧</h2><br/>
+      <% @topics.each do |topic| %>
+        <div class="panel panel-default">
+          <div class="panel-heading"><%= topic.title%></div><br/>
+
+          <div class="panel-body">
+            <h4><%= link_to (simple_format topic.description), topic_path(id:topic.id) %></h4></div><br/>
+            <span><%= link_to topic.user.fullname, user_path(id:topic.user.id)%></span><br/>
+            <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
+            <span>お気に入り</span><br/>
+          <%end%>
+        </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
 
   <div class="col-md-6 col-md-offset-3">
     <h3>
       <span id=""></span>
     </h3>
   </div>
+
+<script>
+
+$(function(){
+    var $setElm = $('panel-body');
+    var cutFigure = '5'; // カットする文字数
+    var afterTxt = 'more'; // 文字カット後に表示するテキスト
+
+    $setElm.each(function(){
+        var textLength = $(this).text().length;
+        var textTrim = $(this).text().substr(0,(cutFigure))
+
+        if(cutFigure < textLength) {
+            $(this).html(textTrim + afterTxt).css({visibility:'visible'});
+        } else if(cutFigure >= textLength) {
+            $(this).css({visibility:'visible'});
+        }
+    });
+});
+</script>
 
   <script>
     $('#average_rating').raty({
@@ -40,5 +77,3 @@
 
     });
   </script>
-
-<%end%>

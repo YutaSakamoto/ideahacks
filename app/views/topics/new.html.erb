@@ -1,3 +1,4 @@
+<br/>
 <div class="panel panel-default">
   <div class="panel-heading">
     アイデアを投稿しましょう
@@ -8,30 +9,23 @@
       <%= form_for @topic do |f| %>
 　　　　  <div class="row">
 
-　　　　　  <div class="form-group">
-            <%= f.label :image, class:'text-white' %>
-            <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-          </div>
+            <h4>写真を選択する</h4>
+            <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %><br/>
 
-          <div class="col-md-4">
-            <%= f.label :title, class:'text-white' %>
-            <%= f.text_field :title, class:'form-control '%>
-          </div>
+           <div class="form-group">
+            <%= f.label :タイトル, class:'text-white' %>
+            <%= f.text_field :title, class:'form-control'%><br/>
+           </div>
 
-          <div class="col-md-4">
-            <%= f.label :description %>
-            <%= f.text_area :description, class: 'form-control' %>
-          </div>
+           <div class="form-group">
+            <%= f.label :アイデア内容 %>
+            <%= f.text_area :description, class: 'form-control' %><br/>
+           </div>
 
-          <div class="col-md-4">
-            <%= f.label :category_list, "カテゴリーを選択してください" %>
-            <%= f.collection_select :category_ids, Category.all, :id, :name %>
-          </div>
+            <%= f.label :category_list, "カテゴリーを選択してください" %><br/>
+            <%= f.collection_select :category_ids, Category.all, :id, :name %><br/><br/>
 
-
-        </div>
-
-        <div><%= f.submit "アイデアを投稿する", class: "btn btn-normal" %></div>
+            <%= f.submit "アイデアを投稿する", class: "btn btn-normal" %><br/>
 
       <% end %>
 

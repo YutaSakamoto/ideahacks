@@ -8,9 +8,9 @@
     <h5>カテゴリー</h5>
     <%= category_topic.category.name %>
     <%end%>
-    
+
     <p><%= simple_format @topic.user.fullname %></p>
-    <h3>Comments</h3>
+    <h3>コメント</h3>
     <% if @topic.reviews.any? %>
       <ul>
       <% @topic.reviews.each do |review| %>

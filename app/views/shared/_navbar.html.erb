@@ -1,5 +1,5 @@
 <!-- Static navbar -->
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top" style ="margin-bottom: 0px">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -9,30 +9,47 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to "Logo", root_path, class: "navbar-brand" %>
-    </div>
 
       <ul class="nav navbar-nav navbar-right">
-          <% if (!user_signed_in?) %>
+        <li>
+          <button class="btn btn-form btn-small">
+            <%= link_to "アイデアを投稿する", new_topic_path, style: "color: white; text-decoration: none;" %>
+          </button>
+        </li>
+
+        <% if (!user_signed_in?) %>
             <li><%= link_to "Login", new_user_session_path %></li>
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
-            <%else%>
-            <div class="navbar-header-right">
-              <%= current_user.fullname %>
-            </div>
-              <li><%= link_to "コミュニティー", "#" %></li>
-                <li><%= link_to "ビジネス", categories_business_path %></li>
-                <li><%= link_to "生活", categories_life_path %></li>
-                <li><%= link_to "企画職向け", categories_planning_path %></li>
-                <li><%= link_to "テクノロジー", categories_technology_path %></li>
-                <li><%= link_to "アート", categories_art_path %></li>
-                <li><%= link_to "イベント", categories_event_path %></li>
-                <li><%= link_to "遊び", categories_hobby_path %></li>
-                <li role="separator" class="divider"></li>
-                <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-            </ul>
-            <%end%>
+        <% else %>
+            <li>
+              <%= link_to notifications_path do %>
+                <i class="fa fa-bell fa-2x icon-babu"></i>
+                <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
+              <% end %>
+            </li>
+
+                  <li><%= link_to "ビジネス", categories_business_path %></li>
+                  <li><%= link_to "生活", categories_life_path %></li>
+                  <li><%= link_to "企画職向け", categories_planning_path %></li>
+                  <li><%= link_to "テクノロジー", categories_technology_path %></li>
+                  <li><%= link_to "アート", categories_art_path %></li>
+                  <li><%= link_to "イベント", categories_event_path %></li>
+                  <li><%= link_to "遊び", categories_hobby_path %></li>
+                  <li><%= link_to "アイデア募集", collections_path %></li>
+
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                          role="button" aria-haspopup="true" aria-expanded="false">
+                          <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp;
+                          <%= current_user.fullname %><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                    </ul>
+                  </li>
+
+        <% end %>
     </div><!--/.nav-collapse -->
   </div>
-</div>
 </nav>

@@ -2,8 +2,13 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @topics = Topic.all
-    #@topics = Topic.where(active: true).limit(3)
+    #@topics = Topic.all
+    @user = User.find_by(params[:id])
+    logger.debug "jiuk"
+    logger.debug params[:q]
+    @q = Topic.ransack(params[:q])
+    #@search = Topic.ransack(title_cont: "test")
+    @topics = @q.result
   end
 
   def search

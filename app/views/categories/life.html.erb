@@ -1,10 +1,20 @@
-<div class="row">
- <div class="col-md-8 col-md-offset-3">
-    <% @category.category_topic.each do |category_topic| %>
-    <ul>
-    <li><%= category_topic.topic.title %></li>
-    <li><%= simple_format category_topic.topic.description %></li>
-    </ul>
-    <%end%>
+<h2 class="text-center">生活に関するアイデア</h2><br/>
+
+ <div class="container">
+
+ <div class="row">
+   <% @category.category_topic.each do |category_topic| %>
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= category_topic.topic.title %></div><br/>
+
+      <div class="panel-body">
+        <h4><%= link_to simple_format category_topic.topic.description %></h4></div><br/>
+        <%= link_to favorites_path, method: :post do %>
+        <span>お気に入り</span><br/>
+        <%end%>
+        <span><%= link_to category_topic.topic.user.fullname %> <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp;</span><br/><br/>
+     </div>
+
+   <%end%>
+  </div>
  </div>
-</div>

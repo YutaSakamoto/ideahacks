@@ -1,0 +1,32 @@
+<br/>
+<div class="panel panel-default">
+  <div class="panel-heading">
+     アイデアを募集する
+  </div>
+
+   <div class="panel-body">
+     <div class="container">
+      <%= form_for @collection do |f| %>
+      <div class="row">
+
+        <h4>写真を選択する</h4>
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %><br/>
+
+
+      <div class="form-group">
+        <%= f.label :募集タイトル, class:'text-white' %>
+        <%= f.text_field :title, class:'form-control '%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :募集するアイデア内容 %>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+
+      <div><%= f.submit "アイデアを投稿する", class: "btn btn-normal" %></div>
+
+      <%end%>
+
+    </div>
+  </div>
+</div>

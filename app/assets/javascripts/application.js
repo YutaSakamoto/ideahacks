@@ -11,9 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require rails-ujs
+//= require jquery_ujs
 //= require activestorage
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require toastr
+//= require cable
+require "stripe"
+Stripe.api_key = "sk_test_l2qFQB2Az2zmC0lyWMtXa1Y4"
 //= require_tree .
