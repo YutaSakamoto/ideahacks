@@ -17,6 +17,4 @@
 //= require bootstrap-sprockets
 //= require toastr
 //= require cable
-require "stripe"
-Stripe.api_key = "sk_test_l2qFQB2Az2zmC0lyWMtXa1Y4"
 //= require_tree .
