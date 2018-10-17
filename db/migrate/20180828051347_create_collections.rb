@@ -5,7 +5,7 @@ class CreateCollections < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :image
       t.references :user, foreign_key: true
-      t.references :idea_declear, foreign_key: true
+
 
       t.timestamps
     end
