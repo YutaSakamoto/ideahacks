@@ -5,7 +5,7 @@ ruby '2.4.1'
 gem 'rails', '~> 5.2.1'
 # Use postgreSQL as the database for Active Record
 group :production do
-  gem 'pg'
+  gem 'pg', "~> 0.21.0"
 end
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
@@ -26,9 +26,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do
-  gem 'pg'
-end
 
 group :test do
   gem 'capybara', '>= 2.15'
