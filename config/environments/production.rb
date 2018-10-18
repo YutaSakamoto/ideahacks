@@ -64,7 +64,6 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "idea_hub1_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: "https://lit-coast-87858.herokuapp.com" }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
