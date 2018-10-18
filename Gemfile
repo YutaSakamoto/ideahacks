@@ -5,7 +5,7 @@ ruby '2.4.1'
 gem 'rails', '~> 5.2.1'
 # Use postgreSQL as the database for Active Record
 group :production do
-  gem 'pg', "~> 0.21.0"
+  gem 'pg'
 end
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'

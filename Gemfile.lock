@@ -280,7 +280,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-twitter
-  pg (~> 0.21.0)
+  pg
   puma (~> 3.11)
   rails (~> 5.2.1)
   ransack
