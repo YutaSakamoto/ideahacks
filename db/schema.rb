@@ -32,10 +32,8 @@ ActiveRecord::Schema.define(version: 2018_09_18_040332) do
     t.string "description"
     t.string "image"
     t.integer "user_id"
-    t.integer "idea_declear_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["idea_declear_id"], name: "index_collections_on_idea_declear_id"
     t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
