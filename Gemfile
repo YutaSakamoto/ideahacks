@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 gem 'rails', '~> 5.2.1'
-gem 'sqlite3', :group => [:development, :test]
 # Use postgreSQL as the database for Active Record
 group :production do
   gem 'pg'
@@ -17,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
